@@ -1,0 +1,21 @@
+{
+  "name": "gugglegum/command-line",
+  "description": "Command line arguments and options parser",
+  "type": "library",
+  "keywords": ["CLI", "console", "command-line", "getopt"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Paul Melekhov",
+      "email": "gugglegum@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "gugglegum\\CommandLine\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0.0"
+  }
+}
