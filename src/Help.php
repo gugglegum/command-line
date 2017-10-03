@@ -165,25 +165,23 @@ class Help
         }
 
         $arguments = $this->config->getArguments();
-        $previousArgument = null;
         $argumentIndex = 0;
-        $isOptionalFound = false;
+        $openedBrackets = 0;
         foreach ($arguments as $argument) {
 
             $synopsis .= ' ';
-            if ($argument->isOptional() && ($previousArgument === null || ($previousArgument instanceof Argument && !$previousArgument->isOptional()))) {
-                $synopsis .= str_repeat('[', count($arguments) - $argumentIndex);
-                $isOptionalFound = true;
-            }
 
+            if ($argument->isOptional()) {
+                $synopsis .= '[';
+                $openedBrackets++;
+            }
             $synopsis .= str_replace('%argument%', $argument->getName(), $this->usageArgumentPattern);
 
-            if ($isOptionalFound) {
-                $synopsis .= ']';
-            }
-
-            $previousArgument = $argument;
             $argumentIndex++;
+        }
+
+        if ($openedBrackets > 0) {
+            $synopsis .= str_repeat(']', $openedBrackets);
         }
 
         $pad = str_repeat(' ', $this->padWidth);
