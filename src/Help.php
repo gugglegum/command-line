@@ -30,7 +30,7 @@ class Help
      *
      * @var string
      */
-    protected $usagePattern = "Usage:\n\n%synopsis%";
+    protected $usagePattern = "Usage:\n%synopsis%";
 
     /**
      * The pattern for "arguments" part of help page. The macro "%argumentRows%" will be replaced by formatted list
@@ -38,7 +38,7 @@ class Help
      *
      * @var string
      */
-    protected $argumentsPattern = "Arguments:\n\n%argumentRows%";
+    protected $argumentsPattern = "Arguments:\n%argumentRows%";
 
     /**
      * The pattern for "options" part of help page. The macro "%optionRows%" will be replaced by formatted list of
@@ -46,7 +46,7 @@ class Help
      *
      * @var string
      */
-    protected $optionsPattern = "Options:\n\n%optionRows%";
+    protected $optionsPattern = "Options:\n%optionRows%";
 
     /**
      * Maximum width of help page (in characters). All texts will shrink to fit this width.
