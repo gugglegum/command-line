@@ -64,6 +64,14 @@ class Argument
     /**
      * @return bool
      */
+    public function isDefined(): bool
+    {
+        return $this->value !== null;
+    }
+
+    /**
+     * @return bool
+     */
     public function isOptional(): bool
     {
         return $this->isOptional;

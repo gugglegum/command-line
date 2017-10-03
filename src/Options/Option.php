@@ -115,6 +115,14 @@ abstract class Option
         return $this->valueName;
     }
 
+    /**
+     * @return bool
+     */
+    public function isDefined(): bool
+    {
+        return $this->value !== null;
+    }
+
     abstract public function setValue($value);
 
     abstract public function getValue();
