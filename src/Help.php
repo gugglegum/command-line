@@ -139,7 +139,9 @@ class Help
     public function compose(): string
     {
         $helpSections = [];
-        $helpSections[] = implode("\n", $this->splitByWords($this->description, $this->maxWidth)) . "\n";
+        if ($this->description !== null) {
+            $helpSections[] = implode("\n", $this->splitByWords($this->description, $this->maxWidth)) . "\n";
+        }
         $helpSections[] = $this->getUsage();
 
         if ($this->config->hasArguments()) {
